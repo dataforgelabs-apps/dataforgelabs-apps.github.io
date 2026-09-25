@@ -1,0 +1,246 @@
+/* DataForge Labs public site. Static, no external requests. */
+
+:root {
+  color-scheme: dark;
+  --bg: #0b0b14;
+  --surface: #16162a;
+  --border: #2a2a45;
+  --text: #ffffff;
+  --text-muted: #b4b4c8;
+  --purple: #b388ff;
+  --orange: #ff8a3d;
+  --max-width: 44rem;
+  --radius: 12px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  overflow-wrap: break-word;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Header / footer */
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  min-height: 4rem;
+}
+
+.brand {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.brand-mark {
+  color: var(--orange);
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 4rem;
+  padding: 2rem 0;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.site-footer p {
+  margin: 0.25rem 0;
+}
+
+/* Typography */
+main.container {
+  padding-top: 3rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  margin: 2.5rem 0 0.75rem;
+}
+
+h1 {
+  font-size: clamp(1.875rem, 6vw, 2.5rem);
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 1.375rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+p,
+ul,
+dl {
+  margin: 0 0 1rem;
+}
+
+ul {
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+a {
+  color: var(--purple);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 0.9em;
+  background: var(--surface);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  color: var(--orange);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.card-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Policy metadata */
+.meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.meta dt {
+  color: var(--text-muted);
+}
+
+.meta dd {
+  margin: 0;
+}
+
+.meta code {
+  background: none;
+  padding: 0;
+}
+
+.policy section {
+  border-top: 1px solid var(--border);
+}
+
+.policy section:first-of-type {
+  border-top: 0;
+}
+
+@media (max-width: 30rem) {
+  body {
+    font-size: 1rem;
+  }
+
+  main.container {
+    padding-top: 2rem;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .meta dd {
+    margin-bottom: 0.6rem;
+  }
+}
